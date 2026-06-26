@@ -1,0 +1,37 @@
+# 🇮🇳 Hinglish Cyberbullying & Sentiment Analysis
+
+## 📌 Project Overview
+A machine learning pipeline built to classify code-mixed Hindi-English (Hinglish) text to detect cyberbullying and negative sentiment. Unlike standard NLP projects that use formal English datasets, this project tackles the unique syntax, unstructured spelling, and mixed vocabulary of Hinglish social media text.
+
+## 🚀 Features
+* **Custom Preprocessing:** Implemented a custom text cleaning function utilizing regular expressions and a merged set of standard English and Hinglish stop words.
+* **TF-IDF Vectorization:** Converted text tokens into numerical features to capture word importance across the corpus.
+* **Logistic Regression Classifier:** Trained a foundational baseline model for binary classification.
+* **Interactive Mini-App:** Includes an `ipywidgets` frontend directly inside the Jupyter Notebook, allowing users to type custom Hinglish sentences and see real-time AI predictions.
+
+## 📊 Dataset
+The model was trained on a structured dataset containing 25,000 Hinglish text entries, categorized into two distinct labels:
+* `0`: Normal / Friendly
+* `1`: Cyberbullying / Negative
+
+## 💻 Tech Stack
+* **Language:** Python
+* **Data Manipulation:** Pandas, NumPy
+* **NLP Processing:** NLTK, Scikit-Learn (TF-IDF)
+* **Modeling:** Scikit-Learn (Logistic Regression)
+* **Visualization:** Matplotlib, Seaborn
+* **UI/Frontend:** ipywidgets
+
+## 🧠 Insights & Limitations
+* **Model Performance:** The model achieved near-perfect accuracy on the testing split. While excellent for a baseline, in real-world scenarios, this often indicates a highly synthetic or easily separable dataset. 
+* **Bag-of-Words Limitations:** Because the model relies on TF-IDF, it relies heavily on specific trigger words rather than deep sequential context. 
+
+**Future Work:**
+* Transitioning to a character-level vectorizer (like FastText) to better handle the severe spelling variations in Hinglish (e.g., "bakwas" vs. "bkwas").
+* Upgrading to contextual word embeddings or a Deep Learning architecture (LSTM) to capture sarcasm and sequential context.
+
+## 🛠️ How to Run Locally
+1. Clone the repository.
+2. Install the required dependencies:
+   ```bash
+   pip install -r requirements.txt
